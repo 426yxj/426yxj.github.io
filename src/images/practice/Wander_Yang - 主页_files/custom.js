@@ -198,62 +198,31 @@ jQuery(function($) {
 
     //初始化header子菜单效果
     var navIsShowType = -1;
-    $('.wsite-nav-2').hover(function(){
-      console.log('in hover'); 
-      navIsShowType = 1;
-      $('#wsite-menus .wsite-menu-wrap').css('top', '143px');
-      $('#wsite-menus .wsite-menu').slideDown() 
-    }, function(){
-      setTimeout(function(){
-        if(navIsShowType != 2){
-          $('#wsite-menus .wsite-menu').slideUp();
-          navIsShowType = -1;
-        }
-      }, 300)
-      
-    });  
-    $('#wsite-menus').hover(function(){
-      navIsShowType = 2;
-      $('#wsite-menus .wsite-menu').show()
-    }, function(){
-      setTimeout(function(){
-        if(navIsShowType != 1){
-          $('#wsite-menus .wsite-menu').slideUp();
-          navIsShowType = -1;
-        }
-      }, 300)
-    })
-
-
-    //轮播效果（首页／lemon）
-    $('.J-wslide-1 .wslide-main .wslide-link').click(function(){
-      var index = $(".J-wslide-1 .wslide-main .wslide-link").index(this);
-      //console.log('index-->', index);
-      $('.J-wslide-1 .wslide-main .wslide-link').removeClass('wslide-link-active');
-      $(this).addClass('wslide-link-active');
-
-      var contentInnerSlides = $('.J-wslide-1 .wslide-main .wslide-content-inner .wslide-slide');
-
-      contentInnerSlides.hide();
-      contentInnerSlides.eq(index).show()
-    });
-
-    $('.J-wslide-0 .wslide-main .wslide-link').click(function(){
-      var index = $(".J-wslide-0 .wslide-main .wslide-link").index(this);
-      //console.log('index-->', index);
-      $('.J-wslide-0 .wslide-main .wslide-link').removeClass('wslide-link-active');      
-      $(this).addClass('wslide-link-active');
-
-      var contentInnerSlides = $('.J-wslide-0 .wslide-main .wslide-content-inner .wslide-slide');
-
-      contentInnerSlides.hide();
-      contentInnerSlides.find('.wslide-slide-inner2').css('opacity', 0);
-      contentInnerSlides.eq(index).show();
-      contentInnerSlides.find('.wslide-slide-inner2').css('opacity', 1);
-    });
-
+  $('.wsite-nav-2').hover(function(){
+    console.log('in hover'); 
+    navIsShowType = 1;
+    $('#wsite-menus .wsite-menu-wrap').css('top', '143px');
+    $('#wsite-menus .wsite-menu').slideDown() 
+  }, function(){
+    setTimeout(function(){
+      if(navIsShowType != 2){
+        $('#wsite-menus .wsite-menu').slideUp();
+        navIsShowType = -1;
+      }
+    }, 300)
     
-
+  });  
+  $('#wsite-menus').hover(function(){
+    navIsShowType = 2;
+    $('#wsite-menus .wsite-menu').show()
+  }, function(){
+    setTimeout(function(){
+      if(navIsShowType != 1){
+        $('#wsite-menus .wsite-menu').slideUp();
+        navIsShowType = -1;
+      }
+    }, 300)
+  })
   });
 
 });
